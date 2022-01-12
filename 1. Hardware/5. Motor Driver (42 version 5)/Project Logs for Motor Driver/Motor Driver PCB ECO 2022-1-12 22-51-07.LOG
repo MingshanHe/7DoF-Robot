@@ -1,0 +1,49 @@
+Removed Pin From Net: NetName=SWDIO Pin=-3
+Removed Pin From Net: NetName=SWCLK Pin=-4
+Removed Pin From Net: NetName=UART1_TX Pin=-5
+Removed Pin From Net: NetName=UART1_RX Pin=-6
+Change Component Designator: OldDesignator= NewDesignator=C1
+Change Component Designator: OldDesignator= NewDesignator=C2
+Change Component Designator: OldDesignator= NewDesignator=C3
+Change Component Designator: OldDesignator= NewDesignator=C4
+Change Component Designator: OldDesignator= NewDesignator=C5
+Change Component Designator: OldDesignator= NewDesignator=C6
+Change Component Designator: OldDesignator= NewDesignator=C7
+Change Component Designator: OldDesignator= NewDesignator=C8
+Change Component Designator: OldDesignator= NewDesignator=C9
+Change Component Designator: OldDesignator= NewDesignator=CN1
+Change Component Designator: OldDesignator= NewDesignator=CN2
+Change Component Designator: OldDesignator= NewDesignator=CN3
+Change Component Designator: OldDesignator= NewDesignator=D1
+Change Component Designator: OldDesignator= NewDesignator=D2
+Change Component Designator: OldDesignator= NewDesignator=H1
+Change Component Designator: OldDesignator= NewDesignator=U1
+Change Component Designator: OldDesignator= NewDesignator=U3
+Change Component Designator: OldDesignator= NewDesignator=U4
+Change Component Designator: OldDesignator= NewDesignator=U5
+Change Component Designator: OldDesignator= NewDesignator=U7
+Added Pin To Net: NetName=UART1_TX Pin=H1-3
+Added Pin To Net: NetName=UART1_RX Pin=H1-4
+Added Pin To Net: NetName=SWDIO Pin=H1-5
+Added Pin To Net: NetName=SWCLK Pin=H1-6
+Added Member To Class: ClassName=Power Member=Component C1 100uF
+Added Member To Class: ClassName=Power Member=Component C2 100uF
+Added Member To Class: ClassName=Power Member=Component C3 100uF
+Added Member To Class: ClassName=Power Member=Component C4 100uF
+Added Member To Class: ClassName=Power Member=Component C5 100nF
+Added Member To Class: ClassName=Power Member=Component C6 1uF
+Added Member To Class: ClassName=Power Member=Component C7 1uF
+Added Member To Class: ClassName=Power Member=Component C8 100nF
+Added Member To Class: ClassName=Power Member=Component C9 100nF
+Added Member To Class: ClassName=Port Member=Component CN1 WAFER-254W-6P
+Added Member To Class: ClassName=Port Member=Component CN2 WAFER-254W-6P
+Added Member To Class: ClassName=Port Member=Component CN3 WAFER-254W-6P
+Added Member To Class: ClassName=Power Member=Component D1 SS54
+Added Member To Class: ClassName=Power Member=Component D2 SMBJ28CA
+Added Member To Class: ClassName=Port Member=Component H1 PZ254V-11-07P
+Added Member To Class: ClassName=Power Member=Component U1 LD1086DT33TR
+Added Member To Class: ClassName=Drive Member=Component U3 A4950ELJTR-T
+Added Member To Class: ClassName=Drive Member=Component U4 A4950ELJTR-T
+Added Member To Class: ClassName=MCU Member=Component U5 STM32F103C8T6
+Added Member To Class: ClassName=Interface Member=Component U7 MT6816CT-ACD
+Added Room: Name=Power

@@ -1,0 +1,13 @@
+Change Component Designator: OldDesignator= NewDesignator=CN1
+Change Component Designator: OldDesignator= NewDesignator=CN2
+Change Component Designator: OldDesignator= NewDesignator=CN3
+Change Component Designator: OldDesignator= NewDesignator=D1
+Change Component Designator: OldDesignator= NewDesignator=D2
+Change Component Designator: OldDesignator= NewDesignator=H1
+Change Component Designator: OldDesignator=U? NewDesignator=U1
+Added Member To Class: ClassName=Port Member=Component CN1 WAFER-254W-6P
+Added Member To Class: ClassName=Port Member=Component CN2 WAFER-254W-6P
+Added Member To Class: ClassName=Port Member=Component CN3 WAFER-254W-6P
+Added Member To Class: ClassName=Power Member=Component D1 SS54
+Added Member To Class: ClassName=Power Member=Component D2 SMBJ28CA
+Added Member To Class: ClassName=Port Member=Component H1 PZ254V-11-07P
