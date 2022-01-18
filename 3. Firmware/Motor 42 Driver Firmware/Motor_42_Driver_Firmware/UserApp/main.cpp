@@ -1,14 +1,14 @@
 #include "common_inc.h"
 #include "configurations.h"
-//#include "Platform/Utils/st_hardware.h"
+#include "Platform/Utils/st_hardware.h"
 //#include <tim.h>
 
 
 /* Component Definitions -----------------------------------------------------*/
 BoardConfig_t boardConfig;
-//Motor motor;
-//TB67H450 tb67H450;
-//MT6816 mt6816;
+Motor motor;
+TB67H450 tb67H450;
+MT6816 mt6816;
 //EncoderCalibrator encoderCalibrator(&motor);
 //Button button1(1, 1000), button2(2, 3000);
 //void OnButton1Event(Button::Event _event);

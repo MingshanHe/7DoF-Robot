@@ -18,8 +18,8 @@ OBJDUMP_LIST :=
 C_UPPER_DEPS := 
 S_DEPS := 
 C_DEPS := 
-OBJCOPY_BIN := 
 CC_DEPS := 
+OBJCOPY_HEX := 
 SIZE_OUTPUT := 
 C++_DEPS := 
 EXECUTABLES := 
@@ -37,6 +37,9 @@ Ctrl_V/Motor \
 Ctrl_V/Sensor/Encoder \
 Ctrl_V/Signal \
 Drivers/STM32F1xx_HAL_Driver/Src \
+Port/Platform/Memory \
+Port/Platform/Utils \
+Port \
 UserApp \
 UserApp/protocols \
 

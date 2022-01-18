@@ -1,0 +1,7 @@
+stockpile_f103cb.c:32:6:Stockpile_Flash_Data_Empty	40	static
+stockpile_f103cb.c:55:6:Stockpile_Flash_Data_Begin	16	static
+stockpile_f103cb.c:66:6:Stockpile_Flash_Data_End	16	static
+stockpile_f103cb.c:77:6:Stockpile_Flash_Data_Set_Write_Add	16	static
+stockpile_f103cb.c:91:6:Stockpile_Flash_Data_Write_Data16	32	static
+stockpile_f103cb.c:110:6:Stockpile_Flash_Data_Write_Data32	32	static
+stockpile_f103cb.c:129:6:Stockpile_Flash_Data_Write_Data64	32	static

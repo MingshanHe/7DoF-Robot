@@ -1,0 +1,4 @@
+encoder_calibrator_stm32.cpp:4:6:virtual void EncoderCalibrator::BeginWriteFlash()	16	static
+encoder_calibrator_stm32.cpp:10:6:virtual void EncoderCalibrator::EndWriteFlash()	16	static
+encoder_calibrator_stm32.cpp:16:6:virtual void EncoderCalibrator::ClearFlash()	16	static
+encoder_calibrator_stm32.cpp:22:6:virtual void EncoderCalibrator::WriteFlash16bitsAppend(uint16_t)	16	static

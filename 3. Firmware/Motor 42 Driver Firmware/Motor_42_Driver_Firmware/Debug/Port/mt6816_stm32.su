@@ -1,0 +1,2 @@
+mt6816_stm32.cpp:4:6:virtual void MT6816::SpiInit()	16	static
+mt6816_stm32.cpp:9:10:virtual uint16_t MT6816::SpiTransmitAndRead16Bits(uint16_t)	32	static

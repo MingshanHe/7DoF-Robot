@@ -42,7 +42,7 @@ extern BoardConfig_t boardConfig;
 /*---------------------------- C++ Scope ---------------------------*/
 
 //#include <Platform/Memory/eeprom_interface.h>
-//#include "Motor/motor.h"
+#include "Motor/motor.h"
 
 
 #endif

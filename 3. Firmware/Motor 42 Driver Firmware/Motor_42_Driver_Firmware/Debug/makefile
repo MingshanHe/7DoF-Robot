@@ -11,6 +11,9 @@ RM := rm -rf
 -include sources.mk
 -include UserApp/protocols/subdir.mk
 -include UserApp/subdir.mk
+-include Port/Platform/Utils/subdir.mk
+-include Port/Platform/Memory/subdir.mk
+-include Port/subdir.mk
 -include Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk
 -include Ctrl_V/Signal/subdir.mk
 -include Ctrl_V/Sensor/Encoder/subdir.mk
@@ -70,8 +73,8 @@ default.size.stdout \
 OBJDUMP_LIST += \
 Motor_42_Driver_Firmware.list \
 
-OBJCOPY_BIN += \
-Motor_42_Driver_Firmware.bin \
+OBJCOPY_HEX += \
+Motor_42_Driver_Firmware.hex \
 
 
 # All Target
@@ -96,17 +99,17 @@ Motor_42_Driver_Firmware.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_T
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Motor_42_Driver_Firmware.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "Motor_42_Driver_Firmware.bin"
+Motor_42_Driver_Firmware.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "Motor_42_Driver_Firmware.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) Motor_42_Driver_Firmware.bin Motor_42_Driver_Firmware.elf Motor_42_Driver_Firmware.list default.size.stdout
+	-$(RM) Motor_42_Driver_Firmware.elf Motor_42_Driver_Firmware.hex Motor_42_Driver_Firmware.list default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

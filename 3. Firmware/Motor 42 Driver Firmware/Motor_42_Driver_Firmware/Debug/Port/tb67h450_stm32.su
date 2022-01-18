@@ -1,0 +1,5 @@
+tb67h450_stm32.cpp:5:6:virtual void TB67H450::InitGpio()	40	static
+tb67h450_stm32.cpp:29:6:virtual void TB67H450::InitPwm()	16	static
+tb67h450_stm32.cpp:35:6:virtual void TB67H450::DacOutputVoltage(uint16_t, uint16_t)	16	static
+tb67h450_stm32.cpp:42:6:virtual void TB67H450::SetInputA(bool, bool)	16	static
+tb67h450_stm32.cpp:49:6:virtual void TB67H450::SetInputB(bool, bool)	16	static
