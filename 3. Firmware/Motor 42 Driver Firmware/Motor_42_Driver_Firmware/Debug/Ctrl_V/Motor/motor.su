@@ -1,0 +1,24 @@
+motor.cpp:7:6:void Motor::Tick20kHz()	16	static
+motor.cpp:17:6:void Motor::AttachEncoder(EncoderBase*)	16	static
+motor.cpp:23:6:void Motor::AttachDriver(DriverBase*)	16	static
+motor.cpp:29:6:void Motor::CloseLoopControlTick()	40	static
+motor.cpp:338:6:void Motor::Controller::CalcCurrentToOutput(int32_t)	16	static
+motor.cpp:352:6:void Motor::Controller::CalcPidToOutput(int32_t)	16	static
+motor.cpp:382:6:void Motor::Controller::CalcDceToOutput(int32_t, int32_t)	24	static
+motor.cpp:415:6:void Motor::Controller::SetCtrlMode(Motor::Mode_t)	16	static
+motor.cpp:421:6:void Motor::Controller::AddTrajectorySetPoint(int32_t, int32_t)	24	static
+motor.cpp:428:6:void Motor::Controller::SetPositionSetPoint(int32_t)	16	static
+motor.cpp:434:6:bool Motor::Controller::SetPositionSetPointWithTime(int32_t, float)	56	static
+motor.cpp:461:6:void Motor::Controller::SetVelocitySetPoint(int32_t)	16	static
+motor.cpp:471:7:float Motor::Controller::GetPosition(bool)	24	static
+motor.cpp:482:7:float Motor::Controller::GetVelocity()	24	static
+motor.cpp:488:7:float Motor::Controller::GetFocCurrent()	16	static
+motor.cpp:494:6:void Motor::Controller::SetCurrentSetPoint(int32_t)	16	static
+motor.cpp:505:6:void Motor::Controller::SetDisable(bool)	16	static
+motor.cpp:511:6:void Motor::Controller::SetBrake(bool)	16	static
+motor.cpp:518:6:void Motor::Controller::ClearStallFlag()	16	static
+motor.cpp:525:9:static int32_t Motor::Controller::CompensateAdvancedAngle(int32_t)	24	static
+motor.cpp:555:6:void Motor::Controller::Init()	16	static
+motor.cpp:615:6:void Motor::Controller::ApplyPosAsHomeOffset()	16	static
+motor.cpp:622:6:void Motor::Controller::AttachConfig(Motor::Controller::Config_t*)	16	static
+motor.cpp:628:6:void Motor::Controller::ClearIntegral() const	16	static

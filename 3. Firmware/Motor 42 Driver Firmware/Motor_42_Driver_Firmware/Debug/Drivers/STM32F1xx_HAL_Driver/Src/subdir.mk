@@ -22,24 +22,6 @@ C_SRCS += \
 ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c \
 ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c 
 
-OBJS += \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o 
-
 C_DEPS += \
 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d \
 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.d \
@@ -58,10 +40,28 @@ C_DEPS += \
 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d \
 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d 
 
+OBJS += \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o 
+
 
 # Each subdirectory must supply rules for building sources it contributes
 Drivers/STM32F1xx_HAL_Driver/Src/%.o: ../Drivers/STM32F1xx_HAL_Driver/Src/%.c Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk
-	arm-none-eabi-gcc "$<" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@"
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../UserApp -I"C:/Users/Robot/Desktop/7DoF-Robot/3. Firmware/Motor 42 Driver Firmware/Motor_42_Driver_Firmware/Port/Platform/Memory" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@"
 
 clean: clean-Drivers-2f-STM32F1xx_HAL_Driver-2f-Src
 

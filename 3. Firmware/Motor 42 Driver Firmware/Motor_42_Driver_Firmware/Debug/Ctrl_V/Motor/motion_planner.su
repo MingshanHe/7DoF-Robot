@@ -1,0 +1,27 @@
+std_abs.h:56:3:long int std::abs(long int)	16	static
+motion_planner.cpp:5:6:void MotionPlanner::CurrentTracker::Init()	16	static
+motion_planner.cpp:11:6:void MotionPlanner::CurrentTracker::NewTask(int32_t)	16	static
+motion_planner.cpp:18:6:void MotionPlanner::CurrentTracker::CalcSoftGoal(int32_t)	24	static
+motion_planner.cpp:69:6:void MotionPlanner::CurrentTracker::CalcCurrentIntegral(int32_t)	16	static
+motion_planner.cpp:77:6:void MotionPlanner::CurrentTracker::SetCurrentAcc(int32_t)	16	static
+motion_planner.cpp:83:6:void MotionPlanner::VelocityTracker::Init()	16	static
+motion_planner.cpp:89:6:void MotionPlanner::VelocityTracker::SetVelocityAcc(int32_t)	16	static
+motion_planner.cpp:95:6:void MotionPlanner::VelocityTracker::NewTask(int32_t)	16	static
+motion_planner.cpp:102:6:void MotionPlanner::VelocityTracker::CalcSoftGoal(int32_t)	24	static
+motion_planner.cpp:153:6:void MotionPlanner::VelocityTracker::CalcVelocityIntegral(int32_t)	16	static
+motion_planner.cpp:161:6:void MotionPlanner::PositionTracker::Init()	16	static
+motion_planner.cpp:173:6:void MotionPlanner::PositionTracker::SetVelocityAcc(int32_t)	16	static
+motion_planner.cpp:181:6:void MotionPlanner::PositionTracker::NewTask(int32_t, int32_t)	24	static
+motion_planner.cpp:190:6:void MotionPlanner::PositionTracker::CalcSoftGoal(int32_t)	40	static
+motion_planner.cpp:333:6:void MotionPlanner::PositionTracker::CalcPositionIntegral(int32_t)	16	static
+motion_planner.cpp:341:6:void MotionPlanner::PositionTracker::CalcVelocityIntegral(int32_t)	16	static
+motion_planner.cpp:349:6:void MotionPlanner::PositionInterpolator::Init()	16	static
+motion_planner.cpp:355:6:void MotionPlanner::PositionInterpolator::NewTask(int32_t, int32_t)	24	static
+motion_planner.cpp:364:6:void MotionPlanner::PositionInterpolator::CalcSoftGoal(int32_t)	16	static
+motion_planner.cpp:381:6:void MotionPlanner::TrajectoryTracker::SetSlowDownVelocityAcc(int32_t)	16	static
+motion_planner.cpp:387:6:void MotionPlanner::TrajectoryTracker::NewTask(int32_t, int32_t)	24	static
+motion_planner.cpp:398:6:void MotionPlanner::TrajectoryTracker::CalcSoftGoal(int32_t, int32_t)	32	static
+motion_planner.cpp:453:6:void MotionPlanner::TrajectoryTracker::CalcVelocityIntegral(int32_t)	16	static
+motion_planner.cpp:461:6:void MotionPlanner::TrajectoryTracker::CalcPositionIntegral(int32_t)	16	static
+motion_planner.cpp:469:6:void MotionPlanner::TrajectoryTracker::Init(int32_t)	16	static
+motion_planner.cpp:477:6:void MotionPlanner::AttachConfig(MotionPlanner::Config_t*)	16	static

@@ -1,0 +1,7 @@
+encoder_calibrator_base.cpp:5:9:static int32_t EncoderCalibratorBase::CycleDataAverage(const uint16_t*, uint16_t, int32_t)	40	static
+encoder_calibrator_base.cpp:30:6:void EncoderCalibratorBase::CalibrationDataCheck()	40	static
+encoder_calibrator_base.cpp:132:6:void EncoderCalibratorBase::Tick20kHz()	16	static
+encoder_calibrator_base.cpp:234:6:void EncoderCalibratorBase::TickMainLoop()	40	static
+encoder_calibrator_base.cpp:364:10:static uint32_t EncoderCalibratorBase::CycleMod(uint32_t, uint32_t)	16	static
+encoder_calibrator_base.cpp:370:9:static int32_t EncoderCalibratorBase::CycleSubtract(int32_t, int32_t, int32_t)	32	static
+encoder_calibrator_base.cpp:381:9:static int32_t EncoderCalibratorBase::CycleAverage(int32_t, int32_t, int32_t)	32	static

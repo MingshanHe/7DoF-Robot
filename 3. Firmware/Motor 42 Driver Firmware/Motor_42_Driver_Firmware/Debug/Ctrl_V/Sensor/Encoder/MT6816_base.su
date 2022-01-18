@@ -1,0 +1,3 @@
+mt6816_base.cpp:3:6:virtual bool MT6816Base::Init()	24	static
+mt6816_base.cpp:20:10:virtual uint16_t MT6816Base::UpdateAngle()	24	static
+mt6816_base.cpp:62:6:virtual bool MT6816Base::IsCalibrated()	16	static

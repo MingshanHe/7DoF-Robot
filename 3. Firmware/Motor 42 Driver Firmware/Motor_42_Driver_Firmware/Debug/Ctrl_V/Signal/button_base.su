@@ -1,0 +1,2 @@
+button_base.cpp:3:6:void ButtonBase::Tick(uint32_t)	24	static
+button_base.cpp:27:6:void ButtonBase::SetOnEventListener(void (*)(ButtonBase::Event))	16	static

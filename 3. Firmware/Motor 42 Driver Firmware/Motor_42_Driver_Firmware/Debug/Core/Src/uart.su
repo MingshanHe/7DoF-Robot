@@ -1,0 +1,2 @@
+uart.c:43:6:MX_USART1_UART_Init	8	static
+uart.c:71:6:Uart_SetRxCpltCallBack	16	static
