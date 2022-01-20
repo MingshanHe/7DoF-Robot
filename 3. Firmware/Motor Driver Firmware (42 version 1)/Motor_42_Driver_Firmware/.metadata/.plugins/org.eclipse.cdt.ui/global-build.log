@@ -1,0 +1,17 @@
+02:35:19 **** Incremental Build of configuration Debug for project Motor_42_Driver_Firmware ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Motor_42_Driver_Firmware.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Robot\Desktop\7DoF-Robot\3. Firmware\Motor Driver Firmware (42 version 2)\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Motor_42_Driver_Firmware.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Motor_42_Driver_Firmware.elf
+ 
+arm-none-eabi-size   Motor_42_Driver_Firmware.elf 
+arm-none-eabi-objdump -h -S  Motor_42_Driver_Firmware.elf  > "Motor_42_Driver_Firmware.list"
+arm-none-eabi-objcopy  -O binary  Motor_42_Driver_Firmware.elf  "Motor_42_Driver_Firmware.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11944	     20	   1908	  13872	   3630	Motor_42_Driver_Firmware.elf
+Finished building: default.size.stdout
+ 
+Finished building: Motor_42_Driver_Firmware.bin
+ 
+Finished building: Motor_42_Driver_Firmware.list
+ 

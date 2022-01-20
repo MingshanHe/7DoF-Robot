@@ -1,0 +1,26 @@
+motion_planner.h:28:18:MotionPlanner::CurrentTracker::CurrentTracker(MotionPlanner*)	16	static
+motion_planner.h:57:18:MotionPlanner::VelocityTracker::VelocityTracker(MotionPlanner*)	16	static
+motion_planner.h:86:18:MotionPlanner::PositionTracker::PositionTracker(MotionPlanner*)	16	static
+motion_planner.h:122:18:MotionPlanner::PositionInterpolator::PositionInterpolator(MotionPlanner*)	16	static
+motion_planner.h:150:18:MotionPlanner::TrajectoryTracker::TrajectoryTracker(MotionPlanner*)	16	static
+motor.h:179:12:constexpr Motor::Config_t::Config_t()	16	static
+motion_planner.h:9:5:constexpr MotionPlanner::MotionPlanner()	16	static
+motor.h:11:5:Motor::Motor()	16	static
+motor.h:108:18:Motor::Controller::Controller(Motor*)	16	static
+encoder_base.h:7:7:constexpr EncoderBase::EncoderBase()	16	static
+mt6816_base.h:10:14:MT6816Base::MT6816Base(uint16_t*)	16	static
+mt6816_stm32.h:14:14:MT6816::MT6816()	16	static
+driver_base.h:7:7:constexpr DriverBase::DriverBase()	16	static
+tb67h450_base.h:9:14:constexpr TB67H450Base::TB67H450Base()	16	static
+tb67h450_stm32.h:9:14:TB67H450::TB67H450()	16	static
+encoder_calibrator_base.h:36:14:EncoderCalibratorBase::EncoderCalibratorBase(Motor*)	16	static
+encoder_calibrator_stm32.h:9:14:EncoderCalibrator::EncoderCalibrator(Motor*)	16	static
+button_base.h:21:5:ButtonBase::ButtonBase(uint8_t, uint32_t)	24	static
+button_stm32.h:12:5:Button::Button(uint8_t, uint32_t)	24	static
+main.cpp:20:6:void Main()	8	static
+main.cpp:129:17:void Tim1Callback100Hz()	8	static
+main.cpp:139:17:void Tim4Callback20kHz()	8	static
+main.cpp:149:6:void OnButton1Event(ButtonBase::Event)	16	static
+main.cpp:174:6:void OnButton2Event(ButtonBase::Event)	16	static
+main.cpp:207:1:void __static_initialization_and_destruction_0(int, int)	16	static
+main.cpp:207:1:cpp)	8	static
