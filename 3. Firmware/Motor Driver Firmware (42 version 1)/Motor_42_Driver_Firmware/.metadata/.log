@@ -106,3 +106,34 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-01-21 21:16:29.874
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-01-23 22:56:05.504 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  C:\Users\Robot\Desktop\7DoF-Robot\3. Firmware\Motor Driver Firmware (42 version 1)\Motor_42_Driver_Firmware\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\Robot\Desktop\7DoF-Robot\3. Firmware\Motor Driver Firmware (42 version 1)\Motor_42_Driver_Firmware\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-01-23 22:56:13.785
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-01-23 22:56:13.830
+!MESSAGE Log4j initialized with config file C:\Users\Robot\Desktop\7DoF-Robot\3. Firmware\Motor Driver Firmware (42 version 1)\Motor_42_Driver_Firmware\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-01-23 22:56:19.806
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-01-24 10:35:52.243 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-01-24 10:36:04.869
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-01-24 10:36:05.192
+!MESSAGE Log4j initialized with config file C:\Users\Robot\Desktop\7DoF-Robot\3. Firmware\Motor Driver Firmware (42 version 1)\Motor_42_Driver_Firmware\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-01-24 10:36:18.799
+!MESSAGE Started RMI Server, listening on port 41337

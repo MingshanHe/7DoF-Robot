@@ -115,14 +115,9 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  OneStep();
-//		IN1_HIGH;
-//		IN2_LOW;
-//		IN3_HIGH;
-//		IN4_LOW;
-//	  MotorTurn_FW();
-//	  HAL_Delay(10000);
+
     /* USER CODE BEGIN 3 */
+	  OneStep();
   }
   /* USER CODE END 3 */
 }
@@ -259,7 +254,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 0;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 32;
+  htim2.Init.Period = 1023;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
@@ -351,7 +346,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOA, IN_BM_Pin|IN_BP_Pin|IN_AM_Pin|IN_AP_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(SSPISPS_GPIO_Port, SSPISPS_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, Blue_LED_Pin|SSPISPS_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : IN_BM_Pin IN_BP_Pin IN_AM_Pin IN_AP_Pin */
   GPIO_InitStruct.Pin = IN_BM_Pin|IN_BP_Pin|IN_AM_Pin|IN_AP_Pin;
@@ -360,18 +355,18 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : Blue_LED_Pin SSPISPS_Pin */
+  GPIO_InitStruct.Pin = Blue_LED_Pin|SSPISPS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
   /*Configure GPIO pins : BUTTON_2_Pin BUTTON_1_Pin */
   GPIO_InitStruct.Pin = BUTTON_2_Pin|BUTTON_1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : SSPISPS_Pin */
-  GPIO_InitStruct.Pin = SSPISPS_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(SSPISPS_GPIO_Port, &GPIO_InitStruct);
 
 }
 
@@ -397,7 +392,7 @@ void Output(int32_t theta,uint8_t effort)
 	int16_t angle_1;
 	int16_t angle_2;
 
-	float phase_multiplier=1.25f;//电机跑一圈共50个电相位�??????????????/4
+	float phase_multiplier=1.25f;//电机跑一圈共50个电相位�???????????????/4
 
 	angle_1=Mod(phase_multiplier*theta,4096);//编码器读出的机械角转换为电相位角
 	angle_2=angle_1+1024;
@@ -453,136 +448,10 @@ void OneStep(void)
 //  else
 //    stepnumber-=1;
 	uint8_t effort = 50;
-	Output(120*stepnumber,effort);//如果校正时电机太大把80的设置电机加�??????????????120左右或�?�更大些
+	Output(120*stepnumber,effort);//如果校正时电机太大把80的设置电机加�???????????????120左右或�?�更大些
 	HAL_Delay(10);
 }
 
-void MotorTurn_FW(void)
-{
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-
-	IN1_HIGH;IN2_LOW;IN3_LOW;IN4_LOW;HAL_Delay(500);
-
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-
-	IN1_HIGH;IN2_LOW;IN3_HIGH;IN4_LOW;HAL_Delay(500);
-
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-
-	IN1_LOW;IN2_LOW;IN3_HIGH;IN4_LOW;HAL_Delay(500);
-
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-
-	IN1_LOW;IN2_HIGH;IN3_HIGH;IN4_LOW;HAL_Delay(500);
-
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-
-	IN1_LOW;IN2_HIGH;IN3_LOW;IN4_LOW;HAL_Delay(500);
-
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-
-	IN1_LOW;IN2_HIGH;IN3_LOW;IN4_HIGH;HAL_Delay(500);
-
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-
-	IN1_LOW;IN2_LOW;IN3_LOW;IN4_HIGH;HAL_Delay(500);
-
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-
-    IN1_HIGH;IN2_LOW;IN3_LOW;IN4_HIGH;HAL_Delay(500);
-
-    //---//
-
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-//
-//    IN1_HIGH;IN2_LOW;IN3_LOW;IN4_HIGH;HAL_Delay(500);
-//
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-//
-//	IN1_LOW;IN2_LOW;IN3_LOW;IN4_HIGH;HAL_Delay(500);
-//
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-//
-//	IN1_LOW;IN2_HIGH;IN3_LOW;IN4_HIGH;HAL_Delay(500);
-//
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-//
-//	IN1_LOW;IN2_HIGH;IN3_LOW;IN4_LOW;HAL_Delay(500);
-//
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-//
-//	IN1_LOW;IN2_HIGH;IN3_HIGH;IN4_LOW;HAL_Delay(500);
-//
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-//
-//	IN1_LOW;IN2_LOW;IN3_HIGH;IN4_LOW;HAL_Delay(500);
-//
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-//
-//	IN1_HIGH;IN2_LOW;IN3_HIGH;IN4_LOW;HAL_Delay(500);
-//
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-//
-//	IN1_HIGH;IN2_LOW;IN3_LOW;IN4_LOW;HAL_Delay(500);
-
-    //---//
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-//
-//	IN1_HIGH;IN2_LOW;IN3_LOW;IN4_LOW;HAL_Delay(500);
-//
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-//
-//	IN1_HIGH;IN2_LOW;IN3_HIGH;IN4_LOW;HAL_Delay(500);
-//
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-//
-//	IN1_LOW;IN2_LOW;IN3_HIGH;IN4_LOW;HAL_Delay(500);
-//
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-//
-//	IN1_LOW;IN2_HIGH;IN3_HIGH;IN4_LOW;HAL_Delay(500);
-//
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-//
-//	IN1_LOW;IN2_HIGH;IN3_LOW;IN4_LOW;HAL_Delay(500);
-//
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-//
-//	IN1_LOW;IN2_HIGH;IN3_LOW;IN4_HIGH;HAL_Delay(500);
-//
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-//
-//	IN1_LOW;IN2_LOW;IN3_LOW;IN4_HIGH;HAL_Delay(500);
-//
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 100 );
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 100 );
-//
-//    IN1_HIGH;IN2_LOW;IN3_LOW;IN4_HIGH;HAL_Delay(500);
-
-}
 void MotorTurn_Stop(void)
 {
 	IN1_HIGH;IN2_HIGH;IN3_HIGH;IN4_HIGH;
@@ -590,15 +459,15 @@ void MotorTurn_Stop(void)
 void CalibrateEncoder(void)
 {
   dir=1;
-//  Output(0,80);//�???????????始时固定在整步位置，如果校正时电机太大把80的设置电机加�???????????120左右或�?�更大些
+//  Output(0,80);//�????????????始时固定在整步位置，如果校正时电机太大把80的设置电机加�????????????120左右或�?�更大些
 
-  for(int16_t x=0;x<=199;x++)//逆时针跑�???????????圈记下各整步位的�???????????
+  for(int16_t x=0;x<=199;x++)//逆时针跑�????????????圈记下各整步位的�????????????
   {
     OneStep();
   }
 //  dir=0;
 //  OneStep();
-//  for(int16_t x=199;x>=0;x--)//顺时针跑�???????????圈记下各整步位的值和之前逆时针保存的值求平均
+//  for(int16_t x=199;x>=0;x--)//顺时针跑�????????????圈记下各整步位的值和之前逆时针保存的值求平均
 //  {
 //    OneStep();
 //  }

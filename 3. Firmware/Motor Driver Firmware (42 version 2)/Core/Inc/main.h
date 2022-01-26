@@ -67,6 +67,8 @@ void Error_Handler(void);
 #define IN_AM_GPIO_Port GPIOA
 #define IN_AP_Pin GPIO_PIN_5
 #define IN_AP_GPIO_Port GPIOA
+#define Blue_LED_Pin GPIO_PIN_6
+#define Blue_LED_GPIO_Port GPIOA
 #define BUTTON_2_Pin GPIO_PIN_2
 #define BUTTON_2_GPIO_Port GPIOB
 #define IN_PWM_B_Pin GPIO_PIN_10
